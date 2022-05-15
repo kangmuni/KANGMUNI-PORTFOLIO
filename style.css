@@ -3,6 +3,7 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-dark-grey: rgb(24, 23, 23);
+  --color-grey: rgb(184, 183, 183);
   --color-blue: rgb(20, 213, 239);
 
   /* Font size */
@@ -137,6 +138,7 @@ button {
 
 .home__title {
   font-size: var(--font-large);
+  font-weight: var(--weight-bold);
   text-align: start;
   margin-top: 100px;
 }
@@ -242,7 +244,7 @@ button {
 }
 
 /* Work */
-#work > .section__container {
+#work .section__container {
   max-width: 1500px;
   margin-bottom: 150px;
 }
@@ -290,13 +292,13 @@ button {
 
 /* Notion */
 #notion {
-  border-top: 1px solid var(--color-white);
-  border-bottom: 1px solid var(--color-white);
-  padding-top: 50px;
-  padding-bottom: 50px;
+  border-top: 2px solid var(--color-grey);
+  border-bottom: 2px solid var(--color-grey);
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
-#notion > .section__container {
+#notion .section__container {
   position: relative;
   height: 100px;
   line-height: 100px;
@@ -305,10 +307,13 @@ button {
 .notion__introduce {
   position: absolute;
   font-size: 100px;
+  font-weight: var(--weight-bold);
+  color: grey;
   left: 0;
   top: 0;
   white-space: nowrap;
   animation: slideshow 15s linear infinite;
+  cursor: pointer;
 }
 
 .notion__introduce:hover {
@@ -322,4 +327,29 @@ button {
   100% {
     left: -200%;
   }
+}
+
+#contact {
+  padding-top: 50px;
+}
+
+.contact__email {
+  color: var(--color-blue);
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.contact__link {
+  font-size: var(--font-small);
+  font-weight: var(--weight-regular);
+  color: var(--color-grey);
+  padding: 2px 15px;
+  border: 3px solid var(--color-grey);
+  border-radius: var(--size-border-radius);
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+.contact__link:hover {
+  background-color: var(--color-blue);
+  color: var(--color-black);
 }
