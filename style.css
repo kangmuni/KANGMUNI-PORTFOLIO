@@ -2,7 +2,8 @@
   /* Color */
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-green: rgb(170, 243, 59);
+  --color-dark-grey: rgb(24, 23, 23);
+  --color-blue: rgb(20, 213, 239);
 
   /* Font size */
   --font-large: 130px;
@@ -17,7 +18,7 @@
   --weight-regular: 400;
 
   /* Size */
-  --size-border-radius: 10px;
+  --size-border-radius: 25px;
 
   /* Anmation Duration  */
   --animation-duration: 300ms;
@@ -46,28 +47,25 @@ ul {
 }
 
 i {
-  /* padding: 2px; */
+  padding: 10px;
 }
 
 /* Typography */
 h1 {
   font-size: var(--font-medium);
   font-weight: var(--weight-bold);
-  color: var(--color-black);
   margin: 16px 0px;
 }
 
 h3 {
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
-  color: var(--color-black);
   margin: 8px 0;
 }
 
 p {
   font-size: var(--font-small);
   font-weight: var(--weight-regular);
-  color: var(--color-black);
   margin: 4px 0;
 }
 
@@ -91,22 +89,33 @@ button {
   font-weight: var(--weight-regular);
 }
 
+.navbar__logo {
+  color: var(--color-blue);
+  font-size: var(--font-regular);
+}
+
 .navbar__menu {
   display: flex;
 }
 
-.navbar__log,
+.navbar__logo,
 .navbar__menu__item {
   padding: 15px;
   cursor: pointer;
 }
 
+.navbar__log:hover,
+.navbar__menu__item:hover {
+  color: var(--color-blue);
+}
+
 /* Section Common */
 .section {
   padding: 50px;
-  padding-top: 130px;
+  padding-top: 150px;
   text-align: center;
   margin: auto;
+  border: 1px solid white;
 }
 
 .section__container {
@@ -140,7 +149,41 @@ button {
   font-size: var(--font-small);
   text-align: end;
   margin-top: 100px;
-  background-color: var(--color-green);
+  background-color: var(--color-blue);
   color: var(--color-black);
-  padding: 2px 10px 2px 40px;
+  padding: 2px 15px;
+  border-radius: var(--size-border-radius);
+}
+
+/* About */
+.about__majors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 900px;
+  height: 850px;
+  padding: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--color-blue);
+}
+
+.major {
+  margin: 50px 50px 50px 50px;
+}
+
+.major__icon {
+  font-size: 100px;
+}
+
+.javascript,
+.typescript {
+  width: 80px;
+  height: 80px;
+}
+
+.javascript {
+  border-radius: 5px;
 }
