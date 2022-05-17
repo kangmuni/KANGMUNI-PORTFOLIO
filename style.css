@@ -3,11 +3,12 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-dark-grey: rgb(38, 37, 37);
-  --color-grey: rgb(184, 183, 183);
+  --color-grey: rgb(170, 170, 170);
   --color-blue: rgb(20, 213, 239);
 
   /* Font size */
-  --font-large: 130px;
+  --font-xlarge: 130px;
+  --font-large: 65px;
   --font-medium: 48px;
   --font-regular: 30px;
   --font-small: 22px;
@@ -45,10 +46,6 @@ a {
 ul {
   list-style: none;
   padding-left: 0;
-}
-
-i {
-  padding: 10px;
 }
 
 /* Typography */
@@ -143,7 +140,7 @@ button {
 }
 
 .home__title {
-  font-size: var(--font-large);
+  font-size: var(--font-xlarge);
   font-weight: var(--weight-bold);
   text-align: start;
   margin-top: 100px;
@@ -160,7 +157,6 @@ button {
   color: var(--color-black);
   padding: 2px 15px;
   border-radius: var(--size-border-radius);
-  cursor: pointer;
 }
 
 /* About */
@@ -170,27 +166,28 @@ button {
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-top: 100px;
-  width: 900px;
-  height: 850px;
+  margin-top: 50px;
+  width: 500px;
+  height: 485px;
   padding: 100px;
   border-radius: 50%;
   border: 3px solid var(--color-blue);
 }
 
 .major {
-  margin: 50px 50px 50px 50px;
+  margin: 10px;
 }
 
 .major__icon {
-  font-size: 100px;
+  font-size: 50px;
   cursor: pointer;
+  padding: 10px;
 }
 
 .javascript,
 .typescript {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
 }
 
 .javascript {
@@ -251,7 +248,7 @@ button {
 
 /* Work */
 #work .section__container {
-  max-width: 1500px;
+  max-width: 100%;
   margin-bottom: 150px;
 }
 
@@ -275,14 +272,18 @@ button {
 }
 
 .project__description {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
+  width: 100%;
+  height: 100%;
   color: var(--color-white);
+  background-color: var(--color-dark-grey);
   opacity: 0;
-  transition: all var(--animation-duration) ease-in-out;
-  transform: translateY(10px);
+  border-radius: var(--size-border-radius);
+  transition: all var(--animation-duration) ease-in;
+  transform: translateY(-70px);
 }
 
 .project__description h3 {
@@ -291,9 +292,6 @@ button {
 
 .project:hover .project__description {
   opacity: 1;
-  background-color: var(--color-dark-grey);
-  width: 100%;
-  height: 100%;
   transform: translateY(0px);
 }
 
@@ -301,8 +299,8 @@ button {
 #notion {
   border-top: 3px solid var(--color-grey);
   border-bottom: 3px solid var(--color-grey);
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   cursor: pointer;
 }
 
@@ -318,7 +316,7 @@ button {
 
 .notion__banner {
   position: absolute;
-  font-size: 100px;
+  font-size: var(--font-xlarge);
   font-weight: var(--weight-bold);
   color: var(--color-grey);
   left: 0;
@@ -341,13 +339,15 @@ button {
 }
 
 #contact {
-  padding-top: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .contact__email {
   color: var(--color-grey);
   cursor: pointer;
   margin-bottom: 50px;
+  font-size: var(--font-medium);
 }
 
 .contact__email:hover {
@@ -358,28 +358,44 @@ button {
   font-size: var(--font-small);
   font-weight: var(--weight-regular);
   color: var(--color-grey);
-  padding: 2px 15px;
+  padding: 3px 15px;
   border: 3px solid var(--color-grey);
   border-radius: var(--size-border-radius);
-  transition: all var(--animation-duration) ease-in-out;
+  transition: all var(--animation-duration);
 }
 
-.contact__link:hover {
+.contact__link.second {
+  display: none;
   background-color: var(--color-blue);
   color: var(--color-black);
+}
+
+.contact__link:hover .contact__link.second {
+  display: block;
 }
 
 .arrow-up {
   position: fixed;
   right: 50px;
-  bottom: 40px;
+  bottom: 80px;
+  padding: 5px 15px;
   color: var(--color-blue);
   border: 3px solid var(--color-grey);
   border-radius: 25%;
   font-size: var(--font-medium);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--animation-duration) ease-out;
+  transform: translateY(50px);
 }
 
-.arrow-up:hover {
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px);
+}
+
+.arrow-up.visible:hover {
   background-color: var(--color-blue);
   color: var(--color-white);
 }
