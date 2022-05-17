@@ -2,7 +2,7 @@
   /* Color */
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-dark-grey: rgb(24, 23, 23);
+  --color-dark-grey: rgb(38, 37, 37);
   --color-grey: rgb(184, 183, 183);
   --color-blue: rgb(20, 213, 239);
 
@@ -88,6 +88,7 @@ button {
   z-index: 1;
   font-size: var(--font-small);
   font-weight: var(--weight-regular);
+  transition: all var(--animation-duration) ease-in-out;
 }
 
 .navbar__logo {
@@ -108,6 +109,11 @@ button {
 .navbar__log:hover,
 .navbar__menu__item:hover {
   color: var(--color-blue);
+}
+
+.navbar__menu__item.active {
+  color: var(--color-blue);
+  text-decoration: line-through;
 }
 
 /* Section Common */
@@ -265,6 +271,7 @@ button {
   height: 600px;
   margin: 20px;
   background-color: rgb(20, 213, 239);
+  border-radius: var(--size-border-radius);
 }
 
 .project__description {
@@ -292,10 +299,15 @@ button {
 
 /* Notion */
 #notion {
-  border-top: 2px solid var(--color-grey);
-  border-bottom: 2px solid var(--color-grey);
+  border-top: 3px solid var(--color-grey);
+  border-bottom: 3px solid var(--color-grey);
   padding-top: 80px;
   padding-bottom: 80px;
+  cursor: pointer;
+}
+
+#notion:hover {
+  border-color: var(--color-blue);
 }
 
 #notion .section__container {
@@ -304,19 +316,18 @@ button {
   line-height: 100px;
 }
 
-.notion__introduce {
+.notion__banner {
   position: absolute;
   font-size: 100px;
   font-weight: var(--weight-bold);
-  color: grey;
+  color: var(--color-grey);
   left: 0;
   top: 0;
   white-space: nowrap;
   animation: slideshow 15s linear infinite;
-  cursor: pointer;
 }
 
-.notion__introduce:hover {
+#notion:hover .notion__banner {
   color: var(--color-blue);
 }
 
@@ -334,9 +345,13 @@ button {
 }
 
 .contact__email {
-  color: var(--color-blue);
+  color: var(--color-grey);
   cursor: pointer;
   margin-bottom: 50px;
+}
+
+.contact__email:hover {
+  color: var(--color-blue);
 }
 
 .contact__link {
@@ -358,8 +373,13 @@ button {
   position: fixed;
   right: 50px;
   bottom: 40px;
-  background-color: var(--color-blue);
-  color: var(--color-white);
+  color: var(--color-blue);
+  border: 3px solid var(--color-grey);
   border-radius: 25%;
   font-size: var(--font-medium);
+}
+
+.arrow-up:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
 }
