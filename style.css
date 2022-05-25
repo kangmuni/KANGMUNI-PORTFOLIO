@@ -7,7 +7,7 @@
   --color-blue: rgb(20, 213, 239);
 
   /* Font size */
-  --font-xlarge: 130px;
+  --font-xlarge: 115px;
   --font-large: 65px;
   --font-medium: 48px;
   --font-regular: 30px;
@@ -36,7 +36,6 @@ body {
   background-color: var(--color-black);
   color: var(--color-white);
   margin: 0;
-  /* cursor: default; */
 }
 
 a {
@@ -81,20 +80,21 @@ button {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px 195px;
+  padding: 15px 160px;
   z-index: 1;
-  font-size: var(--font-small);
-  font-weight: var(--weight-regular);
   transition: all var(--animation-duration) ease-in-out;
 }
 
 .navbar__logo {
   color: var(--color-blue);
   font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
 }
 
 .navbar__menu {
   display: flex;
+  font-size: var(--font-small);
+  font-weight: var(--weight-regular);
 }
 
 .navbar__logo,
@@ -111,6 +111,15 @@ button {
 .navbar__menu__item.active {
   color: var(--color-blue);
   text-decoration: line-through;
+}
+
+.navbar__toggle-btn {
+  color: var(--color-blue);
+  font-size: 22px;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  display: none;
 }
 
 /* Section Common */
@@ -147,10 +156,9 @@ button {
 }
 
 .home__subtitle {
-  position: absolute;
-  right: 0;
-  bottom: 70px;
+  align-self: flex-end;
   font-size: var(--font-small);
+  font-weight: var(--weight-regular);
   text-align: end;
   margin-top: 100px;
   background-color: var(--color-blue);
@@ -160,6 +168,16 @@ button {
 }
 
 /* About */
+#about .section__container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.about__description-second {
+  display: none;
+}
+
 .about__majors {
   display: flex;
   flex-wrap: wrap;
@@ -204,6 +222,7 @@ button {
   display: flex;
   flex-direction: column;
   font-size: var(--font-small);
+  font-weight: var(--weight-regular);
 }
 
 .skill {
@@ -241,9 +260,8 @@ button {
   background-color: var(--color-blue);
   color: var(--color-black);
   padding: 2px 15px;
-  margin-top: 15px;
+  margin-top: 8px;
   border-radius: var(--size-border-radius);
-  cursor: pointer;
 }
 
 /* Work */
@@ -269,6 +287,11 @@ button {
   margin: 20px;
   background-color: rgb(20, 213, 239);
   border-radius: var(--size-border-radius);
+}
+
+.project__img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .project__description {
@@ -299,43 +322,25 @@ button {
 #notion {
   border-top: 3px solid var(--color-grey);
   border-bottom: 3px solid var(--color-grey);
-  padding-top: 100px;
-  padding-bottom: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 60px 0;
   cursor: pointer;
 }
 
-#notion:hover {
-  border-color: var(--color-blue);
-}
-
 #notion .section__container {
-  position: relative;
-  height: 100px;
-  line-height: 100px;
+  height: auto;
 }
 
 .notion__banner {
-  position: absolute;
   font-size: var(--font-xlarge);
   font-weight: var(--weight-bold);
   color: var(--color-grey);
-  left: 0;
-  top: 0;
-  white-space: nowrap;
-  animation: slideshow 15s linear infinite;
 }
 
-#notion:hover .notion__banner {
+.notion__banner:hover {
   color: var(--color-blue);
-}
-
-@keyframes slideshow {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -200%;
-  }
+  border-color: var(--color-blue);
 }
 
 #contact {
@@ -343,11 +348,16 @@ button {
   padding-bottom: 100px;
 }
 
+#contact .section__container {
+  margin: auto;
+}
+
 .contact__email {
-  color: var(--color-grey);
-  cursor: pointer;
   margin-bottom: 50px;
   font-size: var(--font-medium);
+  font-weight: var(--weight-regular);
+  color: var(--color-grey);
+  cursor: pointer;
 }
 
 .contact__email:hover {
@@ -358,20 +368,10 @@ button {
   font-size: var(--font-small);
   font-weight: var(--weight-regular);
   color: var(--color-grey);
-  padding: 3px 15px;
-  border: 3px solid var(--color-grey);
-  border-radius: var(--size-border-radius);
-  transition: all var(--animation-duration);
-}
-
-.contact__link.second {
-  display: none;
   background-color: var(--color-blue);
   color: var(--color-black);
-}
-
-.contact__link:hover .contact__link.second {
-  display: block;
+  padding: 2px 15px;
+  border-radius: var(--size-border-radius);
 }
 
 .arrow-up {
@@ -398,4 +398,147 @@ button {
 .arrow-up.visible:hover {
   background-color: var(--color-blue);
   color: var(--color-white);
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --font-xlarge: 70px;
+    --font-large: 45px;
+    --font-medium: 30px;
+    --font-regular: 25px;
+    --font-small: 15px;
+    --font-micro: 10px;
+  }
+
+  p {
+    font-size: var(--font-small);
+  }
+
+  #navbar {
+    padding: 10px 25px;
+  }
+
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  .navbar__logo {
+    font-size: 20px;
+    align-self: flex-start;
+  }
+
+  .navbar__menu {
+    display: none;
+    padding-top: 40px;
+    text-align: right;
+  }
+
+  .navbar__menu.open {
+    display: block;
+  }
+
+  .section {
+    padding: 20px;
+    padding-top: 100px;
+  }
+
+  #home {
+    height: 100%;
+  }
+
+  #home .section__container {
+    padding: 10px;
+  }
+
+  .home__title {
+    font-size: var(--font-large);
+  }
+
+  .home__subtitle {
+    font-size: var(--font-micro);
+  }
+
+  .about__description-first {
+    display: none;
+  }
+
+  .about__description-second {
+    display: block;
+  }
+
+  .about__majors {
+    width: 280px;
+    height: 280px;
+    padding: 30px;
+    padding-bottom: 35px;
+  }
+
+  .major {
+    margin: 5px;
+  }
+
+  .major__icon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .javascript,
+  .typescript {
+    width: 25px;
+    height: 25px;
+  }
+
+  .major__title {
+    font-size: var(--font-micro);
+    font-weight: var(--weight-semi-bold);
+  }
+
+  .skillset {
+    font-size: var(--font-small);
+  }
+
+  .skill {
+    margin: 15px;
+  }
+
+  .skill__description {
+    margin-bottom: 5px;
+  }
+
+  .skill__bar,
+  .skill__value {
+    height: 10px;
+  }
+
+  .skillset__bottom {
+    font-size: var(--font-micro);
+  }
+
+  #work .section__container {
+    margin-bottom: 50px;
+  }
+
+  .project {
+    height: 390px;
+  }
+
+  .notion__banner {
+    font-size: var(--font-xlarge);
+  }
+
+  .contact__email {
+    font-size: var(--font-regular);
+  }
+
+  .contact__link {
+    font-size: var(--font-small);
+  }
+
+  .arrow-up {
+    right: 40px;
+    bottom: 30px;
+    font-size: var(--font-small);
+    padding: 5px 10px;
+  }
 }

@@ -34,3 +34,9 @@ document.addEventListener('scroll', () => {
 arrowBtn.addEventListener('click', () => {
   scrollIntoView('#home');
 });
+
+//Navbar 토글 버튼 생성
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
+});
