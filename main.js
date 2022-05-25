@@ -6,16 +6,15 @@ const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
   const target = event.target;
   const menu = target.dataset.menu;
+  if (menu === null) {
+    return;
+  }
+  navbarMenu.classList.remove('open');
   scrollIntoView(menu);
   const active = document.querySelector('.navbar__menu__item.active');
   active.classList.remove('active');
   target.classList.add('active');
 });
-
-function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: 'smooth' });
-}
 
 const home = document.querySelector('#home');
 const homeHeight = home.getBoundingClientRect().height;
@@ -40,3 +39,13 @@ const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 navbarToggleBtn.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
 });
+
+// 스크롤 내리면 홈 섹션 투명도 조절
+document.addEventListener('scroll', () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+}

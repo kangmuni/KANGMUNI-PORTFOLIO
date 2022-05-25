@@ -157,9 +157,9 @@ button {
 
 .home__subtitle {
   align-self: flex-end;
+  text-align: right;
   font-size: var(--font-small);
   font-weight: var(--weight-regular);
-  text-align: end;
   margin-top: 100px;
   background-color: var(--color-blue);
   color: var(--color-black);
@@ -251,12 +251,13 @@ button {
 .skillset__bottom {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  padding: 0 25px;
+  padding: 0 15px;
 }
 
 .tool,
 .etc {
+  align-self: flex-end;
+  text-align: right;
   background-color: var(--color-blue);
   color: var(--color-black);
   padding: 2px 15px;
