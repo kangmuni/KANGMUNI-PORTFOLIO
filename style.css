@@ -226,7 +226,7 @@ button {
 }
 
 .skill {
-  margin: 20px;
+  margin: 15px;
 }
 
 .skill__description {
@@ -243,7 +243,7 @@ button {
 }
 
 .skill__value {
-  height: 20px;
+  height: 15px;
   background-color: var(--color-blue);
   border-radius: var(--size-border-radius);
 }
@@ -251,7 +251,7 @@ button {
 .skillset__bottom {
   display: flex;
   flex-direction: column;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 .tool,
@@ -267,7 +267,7 @@ button {
 
 /* Work */
 #work .section__container {
-  max-width: 100%;
+  max-width: 1500px;
   margin-bottom: 150px;
 }
 
@@ -284,7 +284,7 @@ button {
   justify-content: center;
   align-items: center;
   width: 400px;
-  height: 600px;
+  height: 550px;
   margin: 20px;
   background-color: rgb(20, 213, 239);
   border-radius: var(--size-border-radius);
