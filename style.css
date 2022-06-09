@@ -7,12 +7,12 @@
   --color-blue: rgb(20, 213, 239);
 
   /* Font size */
-  --font-xlarge: 115px;
-  --font-large: 65px;
-  --font-medium: 48px;
-  --font-regular: 30px;
-  --font-small: 22px;
-  --font-micro: 14px;
+  --font-xlarge: 7rem;
+  --font-large: 4rem;
+  --font-medium: 3rem;
+  --font-regular: 1.875rem;
+  --font-small: 1.375rem;
+  --font-micro: 0.875rem;
 
   /* Font weight */
   --weight-bold: 700;
@@ -80,7 +80,7 @@ button {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 15px 160px;
+  padding: 25px 160px;
   z-index: 1;
   transition: all var(--animation-duration) ease-in-out;
 }
@@ -95,17 +95,13 @@ button {
   display: flex;
   font-size: var(--font-small);
   font-weight: var(--weight-regular);
+  text-transform: uppercase;
 }
 
 .navbar__logo,
 .navbar__menu__item {
-  padding: 15px;
+  padding: 1em;
   cursor: pointer;
-}
-
-.navbar__log:hover,
-.navbar__menu__item:hover {
-  color: var(--color-blue);
 }
 
 .navbar__menu__item.active {
@@ -115,23 +111,23 @@ button {
 
 .navbar__toggle-btn {
   color: var(--color-blue);
-  font-size: 22px;
+  font-size: 1.65rem;
   position: absolute;
-  top: 25px;
-  right: 35px;
+  top: 1.25em;
+  right: 0.9em;
   display: none;
 }
 
 /* Section Common */
 .section {
-  padding: 50px;
-  padding-top: 150px;
+  padding: 3rem;
+  padding-top: 10rem;
   text-align: center;
   margin: auto;
 }
 
 .section__container {
-  max-width: 1200px;
+  max-width: 70%;
   margin: auto;
 }
 
@@ -140,38 +136,43 @@ button {
   height: 100vh;
 }
 
-#home__container {
+#home .section__container {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  justify-content: center;
   height: 100%;
 }
 
 .home__title {
   font-size: var(--font-xlarge);
   font-weight: var(--weight-bold);
-  text-align: start;
-  margin-top: 100px;
+  text-align: left;
 }
 
 .home__subtitle {
+  position: absolute;
+  bottom: 4em;
   align-self: flex-end;
-  text-align: right;
   font-size: var(--font-small);
   font-weight: var(--weight-regular);
-  margin-top: 100px;
   background-color: var(--color-blue);
   color: var(--color-black);
-  padding: 2px 15px;
+  padding: 0.1em 1em;
   border-radius: var(--size-border-radius);
 }
 
 /* About */
+#about {
+  height: 100vh;
+}
+
 #about .section__container {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .about__description-second {
@@ -183,10 +184,9 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: auto;
   margin-top: 50px;
   width: 500px;
-  height: 485px;
+  height: 500px;
   padding: 100px;
   border-radius: 50%;
   border: 3px solid var(--color-blue);
@@ -199,7 +199,7 @@ button {
 .major__icon {
   font-size: 50px;
   cursor: pointer;
-  padding: 10px;
+  padding: 0.2em;
 }
 
 .javascript,
@@ -218,6 +218,17 @@ button {
 }
 
 /* Skills */
+#skills {
+  height: 100vh;
+}
+
+#skills .section__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
 .skillset {
   display: flex;
   flex-direction: column;
@@ -226,24 +237,24 @@ button {
 }
 
 .skill {
-  margin: 15px;
+  margin: 0.85em;
 }
 
 .skill__description {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 0.25em;
 }
 
 .skill__bar {
   width: 100%;
-  height: 20px;
+  height: 0.85em;
   background-color: var(--color-dark-grey);
   border-radius: var(--size-border-radius);
 }
 
 .skill__value {
-  height: 15px;
+  height: 0.85em;
   background-color: var(--color-blue);
   border-radius: var(--size-border-radius);
 }
@@ -251,7 +262,7 @@ button {
 .skillset__bottom {
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
+  padding: 0 1.5em;
 }
 
 .tool,
@@ -260,15 +271,15 @@ button {
   text-align: right;
   background-color: var(--color-blue);
   color: var(--color-black);
-  padding: 2px 15px;
+  font-size: var(--font-small);
+  padding: 0.1em 1em;
   margin-top: 8px;
   border-radius: var(--size-border-radius);
 }
 
 /* Work */
 #work .section__container {
-  max-width: 1500px;
-  margin-bottom: 150px;
+  max-width: 1300px;
 }
 
 .work__projects {
@@ -285,7 +296,7 @@ button {
   align-items: center;
   width: 400px;
   height: 550px;
-  margin: 20px;
+  margin: 15px;
   background-color: rgb(20, 213, 239);
   border-radius: var(--size-border-radius);
 }
@@ -319,18 +330,26 @@ button {
   transform: translateY(0px);
 }
 
-/* Notion */
-#notion {
-  border-top: 3px solid var(--color-grey);
-  border-bottom: 3px solid var(--color-grey);
-  margin-left: 50px;
-  margin-right: 50px;
-  padding: 60px 0;
-  cursor: pointer;
+/* Contact */
+#contact {
+  height: 100vh;
 }
 
-#notion .section__container {
-  height: auto;
+#contact .section__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: 100%;
+}
+
+.contact__notion {
+  border-top: 3px solid var(--color-grey);
+  border-bottom: 3px solid var(--color-grey);
+  margin-left: 3rem;
+  margin-right: 3rem;
+  padding: 3.5rem 0;
+  cursor: pointer;
 }
 
 .notion__banner {
@@ -344,17 +363,9 @@ button {
   border-color: var(--color-blue);
 }
 
-#contact {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-#contact .section__container {
-  margin: auto;
-}
-
 .contact__email {
-  margin-bottom: 50px;
+  margin-top: 2em;
+  margin-bottom: 1em;
   font-size: var(--font-medium);
   font-weight: var(--weight-regular);
   color: var(--color-grey);
@@ -371,15 +382,16 @@ button {
   color: var(--color-grey);
   background-color: var(--color-blue);
   color: var(--color-black);
-  padding: 2px 15px;
+  padding: 0.1em 1em;
   border-radius: var(--size-border-radius);
+  align-self: center;
 }
 
 .arrow-up {
   position: fixed;
-  right: 50px;
-  bottom: 80px;
-  padding: 5px 15px;
+  right: 2em;
+  bottom: 1.5em;
+  padding: 0.1em 0.3em;
   color: var(--color-blue);
   border: 3px solid var(--color-grey);
   border-radius: 25%;
@@ -403,12 +415,12 @@ button {
 
 @media screen and (max-width: 768px) {
   :root {
-    --font-xlarge: 70px;
-    --font-large: 45px;
-    --font-medium: 30px;
-    --font-regular: 25px;
-    --font-small: 15px;
-    --font-micro: 10px;
+    --font-xlarge: 4rem;
+    --font-large: 2.5rem;
+    --font-medium: 1.875rem;
+    --font-regular: 1.5rem;
+    --font-small: 0.9rem;
+    --font-micro: 0.5rem;
   }
 
   p {
@@ -416,7 +428,7 @@ button {
   }
 
   #navbar {
-    padding: 10px 25px;
+    padding: 5px;
   }
 
   .navbar__toggle-btn {
@@ -424,13 +436,14 @@ button {
   }
 
   .navbar__logo {
-    font-size: 20px;
+    font-size: 1.65em;
     align-self: flex-start;
   }
 
   .navbar__menu {
     display: none;
-    padding-top: 40px;
+    padding-top: 5em;
+    padding-right: 1.25em;
     text-align: right;
   }
 
@@ -439,16 +452,12 @@ button {
   }
 
   .section {
-    padding: 20px;
-    padding-top: 100px;
+    padding: 0;
+    padding-top: 5rem;
   }
 
-  #home {
-    height: 100%;
-  }
-
-  #home .section__container {
-    padding: 10px;
+  .section__container {
+    max-width: 80%;
   }
 
   .home__title {
@@ -456,7 +465,7 @@ button {
   }
 
   .home__subtitle {
-    font-size: var(--font-micro);
+    font-size: var(--font-small);
   }
 
   .about__description-first {
@@ -464,14 +473,14 @@ button {
   }
 
   .about__description-second {
-    display: block;
+    display: flex;
   }
 
   .about__majors {
     width: 280px;
     height: 280px;
-    padding: 30px;
-    padding-bottom: 35px;
+    padding: 32px;
+    padding-bottom: 40px;
   }
 
   .major {
@@ -480,8 +489,8 @@ button {
 
   .major__icon {
     font-size: 30px;
+    padding: 0.25em;
     cursor: pointer;
-    padding: 10px;
   }
 
   .javascript,
@@ -499,29 +508,17 @@ button {
     font-size: var(--font-small);
   }
 
-  .skill {
-    margin: 15px;
-  }
-
-  .skill__description {
-    margin-bottom: 5px;
-  }
-
-  .skill__bar,
-  .skill__value {
-    height: 10px;
-  }
-
-  .skillset__bottom {
-    font-size: var(--font-micro);
+  .tool,
+  .etc {
+    font-size: var(--font-small);
   }
 
   #work .section__container {
-    margin-bottom: 50px;
+    max-width: 90%;
   }
 
   .project {
-    height: 390px;
+    height: 385px;
   }
 
   .notion__banner {
@@ -537,9 +534,6 @@ button {
   }
 
   .arrow-up {
-    right: 40px;
-    bottom: 30px;
-    font-size: var(--font-small);
-    padding: 5px 10px;
+    font-size: var(--font-regular);
   }
 }
