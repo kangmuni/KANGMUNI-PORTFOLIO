@@ -45,6 +45,24 @@ document.addEventListener('scroll', () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+//Contact 이메일 텍스트 클릭하면 복사
+const email = document.querySelector('.contact__email');
+const colorBlue = 'rgb(20, 213, 239)';
+email.addEventListener('click', () => {
+  copy();
+  email.style.color = colorBlue;
+});
+
+function copy() {
+  const text = document.querySelector('.contact__email').textContent;
+  const textarea = document.createElement('textarea');
+  textarea.textContent = text;
+  document.body.append(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
+}
+
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
